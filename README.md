@@ -28,13 +28,16 @@ $ npm -i v-thaana
 
 ### Usage with Vue
 ```javascript
-import thaana from 'v-thaana';
+import thaana from '@yaameen/v-thaana';
 Vue.use(thaana);
+
+
+<input v-thaana type="text" class="form-control" />
 ```
 
 ### Usage Otherwise
 ```javascript
-import { thaana } from 'v-thaana';
+import { thaana } from '@yaameen/v-thaana';
 
 thaana(el, (v) => {
     // Handle app logic
