@@ -1,12 +1,20 @@
 {
-  "name": "v-thaana",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@yaameen/v-thaana",
+  "version": "1.0.1",
+  "description": "[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Yameen Mohamed (yaamynu@gmail.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaameen/v-thaana.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yaameen/v-thaana/issues"
+  },
+  "homepage": "https://github.com/yaameen/v-thaana#readme"
 }

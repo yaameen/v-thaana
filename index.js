@@ -49,11 +49,9 @@ const thaana = function(el, updateCallback) {
     el.addEventListener('input', handleKeyboardInput)
 }
 
-export  {
-    thaana
-}
 
-export default {
+
+module.exports = {
     install (Vue, options) {
         Vue.directive('thaana', {
             inserted: function (el, binding, vnode) {
@@ -61,4 +59,5 @@ export default {
             }
         })
     }
-  }
+}
+module.exports.thaana = thaana;
