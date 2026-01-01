@@ -1,12 +1,42 @@
 {
-  "name": "@yaameen/v-thaana",
+  "name": "v-thaana",
   "version": "1.0.2",
-  "description": "[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)",
-  "main": "index.js",
+  "description": "Vue directive for Thaana (Maldivian script) input with TypeScript support",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && npm run build:esm",
+    "build:esm": "tsc --module ESNext --outDir dist --declaration false && mv dist/index.js dist/index.esm.js",
+    "dev": "tsc --watch --noEmit",
+    "dev:sample": "cd sample && npm run dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:sample\" --names \"TSC,SAMPLE\" --prefix-colors \"blue,green\"",
+    "prepublishOnly": "npm run build",
+    "preversion": "npm run build",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version",
+    "publish:patch": "npm run version:patch && npm publish",
+    "publish:minor": "npm run version:minor && npm publish",
+    "publish:major": "npm run version:major && npm publish",
+    "release:patch": "npm run build && npm version patch && npm publish && git push && git push --tags",
+    "release:minor": "npm run build && npm version minor && npm publish && git push && git push --tags",
+    "release:major": "npm run build && npm version major && npm publish && git push && git push --tags"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "thaana",
+    "dhivehi",
+    "maldivian",
+    "input",
+    "directive",
+    "typescript"
+  ],
   "author": "Yameen Mohamed (yaamynu@gmail.com)",
   "license": "MIT",
   "repository": {
@@ -16,5 +46,16 @@
   "bugs": {
     "url": "https://github.com/yaameen/v-thaana/issues"
   },
-  "homepage": "https://github.com/yaameen/v-thaana#readme"
+  "homepage": "https://github.com/yaameen/v-thaana#readme",
+  "peerDependencies": {
+    "vue": "^2.6.0 || ^3.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.0.0",
+    "vue": "^2.7.14"
+  },
+  "dependencies": {
+    "dhivehi": "^1.2.12"
+  }
 }

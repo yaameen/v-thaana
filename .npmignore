@@ -1,0 +1,23 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Sample project
+sample/
+
+# Development files
+tsconfig.json
+.gitignore
+.npmignore
+scripts/
+DEV.md
+
+# Build artifacts (only dist/ should be published)
+*.map
+
+# Other
+node_modules/
+*.log
+.DS_Store
+
